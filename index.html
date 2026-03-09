@@ -1,1 +1,416 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xiao Yang</title>
+    <style>
+      :root {
+        --bg: #f7f7f4;
+        --text: #222;
+        --muted: #666;
+        --link: #1f5fa8;
+        --line: #d8d8d1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", Times, serif;
+        line-height: 1.65;
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .page {
+        width: min(980px, calc(100vw - 32px));
+        margin: 48px auto 72px;
+      }
+
+      h1,
+      h2,
+      p,
+      ul {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      section {
+        margin-top: 34px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .intro-photo img {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+      }
+
+      .intro-text {
+        display: grid;
+        gap: 6px;
+      }
+
+      .meta {
+        color: var(--muted);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 10px;
+      }
+
+      .bio {
+        margin-top: 18px;
+      }
+
+      .about-copy p + p {
+        margin-top: 14px;
+      }
+
+      .news-list,
+      .pub-list {
+        padding-left: 20px;
+      }
+
+      .pub-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .news-list li,
+      .pub-list li {
+        margin-bottom: 10px;
+      }
+
+      .pub-item {
+        margin-bottom: 18px;
+      }
+
+      .pub-card {
+        display: grid;
+        grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+        gap: 22px;
+        align-items: start;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pub-media {
+        width: 100%;
+      }
+
+      .pub-card img {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        max-width: 100%;
+      }
+
+      .pub-card video {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #000;
+        max-width: 100%;
+      }
+
+      .pub-title {
+        font-weight: 600;
+      }
+
+      .pub-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 8px;
+        align-items: center;
+      }
+
+      .pub-links a,
+      .pub-links span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .star-badge {
+        height: 20px;
+        vertical-align: middle;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      @media (max-width: 640px) {
+        .page {
+          width: min(100vw - 24px, 980px);
+          margin: 28px auto 48px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .intro {
+          grid-template-columns: 1fr;
+        }
+
+        .intro-photo {
+          max-width: 180px;
+        }
+
+        .pub-card {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <div class="intro-photo">
+          <img src="./src/profile_photo.png" alt="Profile photo of Xiao Yang" />
+        </div>
+        <div class="intro-text">
+          <h1>Xiao Yang</h1>
+          <p class="meta">Principal Research Scientist at Canva</p>
+          <div class="links">
+            <a href="mailto:xiaoyang_seravee@outlook.com">Email</a>/
+            <a href="https://x.com/YangZuoshi" target="_blank" rel="noreferrer">X</a>/
+            <a href="https://www.linkedin.com/in/xiao-yang-46464934/" target="_blank" rel="noreferrer">LinkedIn</a>/
+            <a href="https://scholar.google.com/citations?user=_MAKSLkAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+          </div>
+          <!-- <p class="bio">
+            I work on large-scale generative models for images and videos. My recent work covers
+            foundation model training, fast inference for diffusion systems, and translating research
+            into product experiences used in TikTok, Douyin, CapCut, and related platforms.
+          </p> -->
+        </div>
+      </header>
+
+      <section>
+        <h2>About</h2>
+        <div class="about-copy">
+          <p>
+            Xiao Yang is a Principal Research Scientist at <a href="https://www.canva.com/" target="_blank" rel="noreferrer">Canva</a> on Generative AI, specifically in efficient image/video generation.
+          </p>
+          <p>
+            Prior to that he worked at <a href="https://www.bytedance.com/" target="_blank" rel="noreferrer">Bytedance</a> as a Senior Staff Manager, managing a team of 10+ 
+            people on AIGC foundation model development and applications. Before that he also worked at <a href="https://www.meta.com/" target="_blank" rel="noreferrer">Meta</a> shortly on video advertisement products.
+          </p>
+          <p>
+            He got his Ph.D degree from Computer Science department, <a href="https://www.unc.edu/" target="_blank" rel="noreferrer">UNC Chapel Hill</a>, advised by <a href="https://cseweb.ucsd.edu/~mniethammer/author/marc-niethammer/", target="_blank" rel="noreferrer">Dr. Marc Niethammer</a>; He obtained his bachelor degree in Electrical Engineering from <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noreferrer">Tsinghua University</a>.
+          </p>
+          <p>
+            His past works spans across various aspect of generative models, including:
+          </p>
+          <ul class="news-list">
+            <li>Efficient model: <a href="https://github.com/PKU-YuanGroup/Helios" target="_blank" rel="noreferrer">Helios</a>, <a href="https://kingofprank.github.io/fsvideo/" target="_blank" rel="noreferrer">FSVideo</a>, <a href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noreferrer">SDXL-Lightning</a>, <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning" target="_blank" rel="noreferrer">AnimateDiff-Lightning</a></li>
+            <li>Foundation models: <a href="https://arxiv.org/abs/2503.07703" target="_blank" rel="noreferrer">Seeddream</a>, <a href="https://arxiv.org/abs/2305.08891" target="_blank" rel="noreferrer">zero-terminal SNR</a>, <a href="https://mv-dream.github.io/" target="_blank" rel="noreferrer">MVDream</a></li>
+            <li>Applications: <a href="https://github.com/Boese0601/MagicDance" target="_blank" rel="noreferrer">MagicPose</a>, <a href="https://ip-prompter.github.io/" target="_blank" rel="noreferrer">IP-Prompter</a>, and 20+ high-profile product launches (such as <a href="https://www.theverge.com/2022/8/15/23306101/tiktok-ai-greenscreen-filter-text-to-image-mainstream" target="_blank" rel="noreferrer">this one </a>and <a href="https://www.dexerto.com/entertainment/how-to-use-tiktoks-ai-portrait-filter-2025769/" target="_blank" rel="noreferrer">this one</a>).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><b style='color:red;'>Hiring!</b> I am hiring people interested in <b>efficient generative model</b> (distillation, qualtization, efficient model architectures) and <b>video generative model post-training</b> (SFT, RL) in China. Please feel free to contact me if you are interested!</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Selected Publications</h2>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <video src="./src/helios_features.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
+              </div>
+              <div>
+                <p class="pub-title">Helios: Real Real-Time Long Video Generation Model. arXiv, 2026.</p>
+                <p class="note">
+                  A 14B real-time long video generation model capable of generation video at 19.5 FPS on a single H100.
+                </p>
+                <div class="pub-links">
+                  <a href="https://pku-yuangroup.github.io/Helios-Page/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2603.04379" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://github.com/PKU-YuanGroup/Helios?tab=readme-ov-file" target="_blank" rel="noreferrer">
+                    Code
+                    <img
+                      class="star-badge"
+                      src="https://img.shields.io/github/stars/PKU-YuanGroup/Helios?style=social"
+                      alt="GitHub stars for PKU-YuanGroup Helios"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <video src="./src/FSVideo_demo.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
+              </div>
+              <div>
+                <p class="pub-title">FSVideo: Fast Speed Video Diffusion Model in a Highly-Compressed Latent Space. arXiv, 2026.</p>
+                <p class="note">
+                  A 28B video generation model achieving high quality, 720P video generation while being 42.3× faster than WAN 14B video models.
+                </p>
+                <div class="pub-links">
+                  <a href="https://kingofprank.github.io/fsvideo/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2602.02092" target="_blank" rel="noreferrer">Paper</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <img
+                  src="./src/ipprompter.jpg"
+                  alt="IP Prompter sample results"
+                />
+              </div>
+              <div>
+                <p class="pub-title">IP-Prompter: Training-Free Theme-Specific Image Generation via Dynamic Visual Prompting. SIGGRAPH, 2025.</p>
+                <p class="note">
+                  Training-free personalization method achiving state-of-the-art character identity preserving, style consistency and text alignment results.
+                </p>
+                <div class="pub-links">
+                  <a href="https://ip-prompter.github.io/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2501.15641" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://github.com/zyxElsa/IP-Prompter" target="_blank" rel="noreferrer">Code</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <img
+                  src="./src/sdxl_lightning_samples.jpg"
+                  alt="SDXL-Lightning sample results"
+                />
+              </div>
+              <div>
+                <p class="pub-title">SDXL-Lightning: Progressive Adversarial Diffusion Distillation. arXiv, 2024.</p>
+                <p class="note">
+                  Industry-standard few-step SDXL acceleration method.
+                </p>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2402.13929" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noreferrer">Model</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <video src="./src/animatediff-lightning.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
+              <div>
+                <p class="pub-title">AnimateDiff-Lightning: Cross-Model Diffusion Distillation. arXiv, 2024.</p>
+                <p class="note">
+                  SOTA few-step video generation for animatediff; >60 million downloads on Huggingface.
+                </p>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2403.12706" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning" target="_blank" rel="noreferrer">Model</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <img
+                src="./src/mvdream.gif"
+                alt="mvdream sample results"
+              />
+              <div>
+                <p class="pub-title">MVDream: Multi-view Diffusion for 3D Generation. ICLR, 2024.</p>
+                <p class="note">
+                  First method to solve Janus problem for 3D generation.
+                </p>
+                <div class="pub-links">
+                  <a href="https://mv-dream.github.io/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2308.16512" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://github.com/bytedance/MVDream" target="_blank" rel="noreferrer">Code
+                      <img
+                      class="star-badge"
+                      src="https://img.shields.io/github/stars/bytedance/MVDream?style=social"
+                      alt="GitHub stars for bytedance MVDream"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+          <li class="pub-item">
+            <div class="pub-card">
+              <img
+                src="./src/magicdance.jpeg"
+                alt="magicdance sample results"
+              />
+              <div>
+                <p class="pub-title">MagicPose: Realistic Human Poses and Facial Expressions Retargeting with Identity-aware Diffusion. ICML, 2024.</p>
+                <p class="note">
+                  High performance pose and expression retargeting.
+                </p>
+                <div class="pub-links">
+                  <a href="https://boese0601.github.io/magicdance/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2311.12052" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://github.com/Boese0601/MagicDance" target="_blank" rel="noreferrer">Code
+                      <img
+                      class="star-badge"
+                      src="https://img.shields.io/github/stars/Boese0601/MagicDance?style=social"
+                      alt="GitHub stars for magicdance"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        <p class="note">Last update date: 2026/03.</p>
+      </section>
+    </main>
+  </body>
+</html>
