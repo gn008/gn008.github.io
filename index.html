@@ -152,6 +152,24 @@
         font-weight: 600;
       }
 
+      .pub-venue {
+        display: inline-block;
+        margin: 8px 0;
+        padding: 2px 10px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: #fff;
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .pub-spotlight {
+        border-color: #d6b86b;
+        background: #fff2cc;
+        color: #754b00;
+      }
+
       .pub-links {
         display: flex;
         flex-wrap: wrap;
@@ -252,8 +270,8 @@
             My past works spans across various aspect of generative models, including:
           </p>
           <ul class="news-list">
-            <li>Efficient model: <a href="https://github.com/PKU-YuanGroup/Helios" target="_blank" rel="noreferrer">Helios</a>, <a href="https://kingofprank.github.io/fsvideo/" target="_blank" rel="noreferrer">FSVideo</a>, <a href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noreferrer">SDXL-Lightning</a>, <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning" target="_blank" rel="noreferrer">AnimateDiff-Lightning</a></li>
-            <li>Foundation models: <a href="https://arxiv.org/abs/2503.07703" target="_blank" rel="noreferrer">Seeddream</a>, <a href="https://arxiv.org/abs/2305.08891" target="_blank" rel="noreferrer">zero-terminal SNR</a>, <a href="https://mv-dream.github.io/" target="_blank" rel="noreferrer">MVDream</a></li>
+            <li>Efficient model: <a href="https://arxiv.org/abs/2610.04225v1" target="_blank" rel="noreferrer">FlashGaze</a>, <a href="https://github.com/PKU-YuanGroup/Helios" target="_blank" rel="noreferrer">Helios</a>, <a href="https://kingofprank.github.io/fsvideo/" target="_blank" rel="noreferrer">FSVideo</a>, <a href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noreferrer">SDXL-Lightning</a>, <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning" target="_blank" rel="noreferrer">AnimateDiff-Lightning</a></li>
+            <li>Foundation models: <a href="https://yuci-gpt.github.io/SplitMoE/" target="_blank" rel="noreferrer">SplitMoE</a>, <a href="https://arxiv.org/abs/2503.07703" target="_blank" rel="noreferrer">Seeddream</a>, <a href="https://arxiv.org/abs/2305.08891" target="_blank" rel="noreferrer">zero-terminal SNR</a>, <a href="https://mv-dream.github.io/" target="_blank" rel="noreferrer">MVDream</a></li>
             <li>Applications: <a href="https://github.com/Boese0601/MagicDance" target="_blank" rel="noreferrer">MagicPose</a>, <a href="https://ip-prompter.github.io/" target="_blank" rel="noreferrer">IP-Prompter</a>, and 20+ high-profile product launches (such as <a href="https://www.theverge.com/2022/8/15/23306101/tiktok-ai-greenscreen-filter-text-to-image-mainstream" target="_blank" rel="noreferrer">this one </a>and <a href="https://www.dexerto.com/entertainment/how-to-use-tiktoks-ai-portrait-filter-2025769/" target="_blank" rel="noreferrer">this one</a>).</li>
           </ul>
         </div>
@@ -272,10 +290,52 @@
           <li class="pub-item">
             <div class="pub-card">
               <div class="pub-media">
+                <!-- Four text-to-video samples from the official SplitMoE project gallery. -->
+                <video src="./src/splitmoe_samples.mp4" poster="./src/splitmoe_samples.jpg" controls playsinline autoplay muted loop preload="metadata" width="800" height="448" style="height: auto;" aria-label="SplitMoE generated video samples: a wizard, a red fox, a coastal cyclist, and a chameleon">
+                  <a href="https://yuci-gpt.github.io/SplitMoE/#results">View SplitMoE video samples</a>.
+                </video>
+              </div>
+              <div>
+                <p class="pub-title">Breaking the Uniformity Trap: Scaling Video Diffusion Model via SplitMoE.</p>
+                <p class="pub-venue pub-spotlight">NeurIPS 2026 · Spotlight</p>
+                <p class="note">
+                  A 27B video diffusion MOE model with 14B activated parameters, splitting semantic and generic experts to improve generation quality and routing coherence.
+                </p>
+                <div class="pub-links">
+                  <a href="https://yuci-gpt.github.io/SplitMoE/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2609.38140" target="_blank" rel="noreferrer">Paper</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <!-- Patch-pruning visualization from Figure 2 of the FlashGaze paper. -->
+                <a href="https://arxiv.org/html/2610.04225v1#S1.F2" target="_blank" rel="noreferrer">
+                  <img src="./src/flashgaze_visualization.jpg" alt="FlashGaze patch pruning: retaining changing regions across video frames and using fine, medium, and coarse patches in a driving scene" loading="lazy" />
+                </a>
+              </div>
+              <div>
+                <p class="pub-title">FlashGaze: Training-Free Multi-Scale Patch Pruning For Efficient Video Understanding.</p>
+                <p class="pub-venue">arXiv 2026</p>
+                <p class="note">
+                  Training-free patch pruning for efficient video understanding. On Qwen3-VL-8B, retains 98% of baseline accuracy on LongVideoBench with up to 5.4× faster vision encoding and 17× faster MLLM prefill.
+                </p>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2610.04225v1" target="_blank" rel="noreferrer">Paper</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
                 <video src="./src/helios_features.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
               </div>
               <div>
-                <p class="pub-title">Helios: Real Real-Time Long Video Generation Model. arXiv, 2026.</p>
+                <p class="pub-title">Helios: Real Real-Time Long Video Generation Model.</p>
+                <p class="pub-venue">arXiv 2026</p>
                 <p class="note">
                   A 14B real-time long video generation model capable of generating video at 19.5 FPS on a single H100.
                 </p>
@@ -300,7 +360,8 @@
                 <video src="./src/FSVideo_demo.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
               </div>
               <div>
-                <p class="pub-title">FSVideo: Fast Speed Video Diffusion Model in a Highly-Compressed Latent Space. arXiv, 2026.</p>
+                <p class="pub-title">FSVideo: Fast Speed Video Diffusion Model in a Highly-Compressed Latent Space.</p>
+                <p class="pub-venue">arXiv 2026</p>
                 <p class="note">
                   A 28B video generation model achieving high quality, 720P video generation while being 42.3× faster than WAN 14B video models.
                 </p>
@@ -320,7 +381,8 @@
                 />
               </div>
               <div>
-                <p class="pub-title">IP-Prompter: Training-Free Theme-Specific Image Generation via Dynamic Visual Prompting. SIGGRAPH, 2025.</p>
+                <p class="pub-title">IP-Prompter: Training-Free Theme-Specific Image Generation via Dynamic Visual Prompting.</p>
+                <p class="pub-venue">SIGGRAPH 2025</p>
                 <p class="note">
                   Training-free personalization method achiving state-of-the-art character identity preserving, style consistency and text alignment results.
                 </p>
@@ -341,7 +403,8 @@
                 />
               </div>
               <div>
-                <p class="pub-title">SDXL-Lightning: Progressive Adversarial Diffusion Distillation. arXiv, 2024.</p>
+                <p class="pub-title">SDXL-Lightning: Progressive Adversarial Diffusion Distillation.</p>
+                <p class="pub-venue">arXiv 2024</p>
                 <p class="note">
                   Industry-standard few-step SDXL acceleration method.
                 </p>
@@ -356,7 +419,8 @@
             <div class="pub-card">
               <video src="./src/animatediff-lightning.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
               <div>
-                <p class="pub-title">AnimateDiff-Lightning: Cross-Model Diffusion Distillation. arXiv, 2024.</p>
+                <p class="pub-title">AnimateDiff-Lightning: Cross-Model Diffusion Distillation.</p>
+                <p class="pub-venue">arXiv 2024</p>
                 <p class="note">
                   SOTA few-step video generation for animatediff; >60 million downloads on Huggingface.
                 </p>
@@ -374,7 +438,8 @@
                 alt="mvdream sample results"
               />
               <div>
-                <p class="pub-title">MVDream: Multi-view Diffusion for 3D Generation. ICLR, 2024.</p>
+                <p class="pub-title">MVDream: Multi-view Diffusion for 3D Generation.</p>
+                <p class="pub-venue">ICLR 2024</p>
                 <p class="note">
                   First method to solve Janus problem for 3D generation.
                 </p>
@@ -399,7 +464,8 @@
                 alt="magicdance sample results"
               />
               <div>
-                <p class="pub-title">MagicPose: Realistic Human Poses and Facial Expressions Retargeting with Identity-aware Diffusion. ICML, 2024.</p>
+                <p class="pub-title">MagicPose: Realistic Human Poses and Facial Expressions Retargeting with Identity-aware Diffusion.</p>
+                <p class="pub-venue">ICML 2024</p>
                 <p class="note">
                   High performance pose and expression retargeting.
                 </p>
@@ -424,7 +490,8 @@
                 alt="zero-terminal SNR sample results"
               />
               <div>
-                <p class="pub-title">Common Diffusion Noise Schedules and Sample Steps are Flawed. WACV, 2024.</p>
+                <p class="pub-title">Common Diffusion Noise Schedules and Sample Steps are Flawed.</p>
+                <p class="pub-venue">WACV 2024</p>
                 <p class="note">
                   Zero-terminal SNR. Widely-used noise schedule fix for diffusion model for image/video/3D generation
                 </p>
@@ -441,7 +508,8 @@
                 alt="moma"
               />
               <div>
-                <p class="pub-title">MoMA: Multimodal LLM Adapter for Fast Personalized Image Generation. ECCV, 2024.</p>
+                <p class="pub-title">MoMA: Multimodal LLM Adapter for Fast Personalized Image Generation.</p>
+                <p class="pub-venue">ECCV 2024</p>
                 <p class="note">
                   Training-free image personalization method via multimodal LLM prompting.
                 </p>
@@ -466,7 +534,8 @@
                 alt="panic-3d sample results"
               />
               <div>
-                <p class="pub-title">PAniC-3D: Stylized Single-view 3D Reconstruction from Portraits of Anime Characters. CVPR, 2023.</p>
+                <p class="pub-title">PAniC-3D: Stylized Single-view 3D Reconstruction from Portraits of Anime Characters.</p>
+                <p class="pub-venue">CVPR 2023</p>
                 <p class="note">
                   GAN-based single-view-to-3D reconstruction method for anime characters with strong stylization handling capability.
                 </p>
@@ -490,7 +559,8 @@
                 alt="shift diffusion sample results"
               />
               <div>
-                <p class="pub-title">Shifted Diffusion for Text-to-image Generation. CVPR, 2023.</p>
+                <p class="pub-title">Shifted Diffusion for Text-to-image Generation.</p>
+                <p class="pub-venue">CVPR 2023</p>
                 <p class="note">
                   SOTA open-source text-to-image generation model in DALL-E 2 era.
                 </p>
@@ -513,7 +583,8 @@
                 <video src="./src/sem-stylegan.mp4" controls playsinline autoplay muted loop preload="metadata"></video>
               </div>
               <div>
-                <p class="pub-title">SemanticStyleGAN: Learning Compositonal Generative Priors for Controllable Image Synthesis and Editing. CVPR, 2022.</p>
+                <p class="pub-title">SemanticStyleGAN: Learning Compositonal Generative Priors for Controllable Image Synthesis and Editing.</p>
+                <p class="pub-venue">CVPR 2022</p>
                 <p class="note">
                   Stylegan-based model for compositional image generation and editing.
                 </p>
@@ -532,7 +603,7 @@
             </div>
           </li>          
         </ul>
-        <p class="note">Last update date: 2026/03.</p>
+        <p class="note">Last update date: 2026/10.</p>
       </section>
     </main>
   </body>
