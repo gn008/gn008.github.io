@@ -133,6 +133,15 @@
         width: 100%;
       }
 
+      .media-labels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 4px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
       .pub-card img {
         display: block;
         width: 100%;
@@ -270,24 +279,88 @@
             My past works spans across various aspect of generative models, including:
           </p>
           <ul class="news-list">
-            <li>Efficient model: <a href="https://arxiv.org/abs/2610.04225v1" target="_blank" rel="noreferrer">FlashGaze</a>, <a href="https://github.com/PKU-YuanGroup/Helios" target="_blank" rel="noreferrer">Helios</a>, <a href="https://kingofprank.github.io/fsvideo/" target="_blank" rel="noreferrer">FSVideo</a>, <a href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noreferrer">SDXL-Lightning</a>, <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning" target="_blank" rel="noreferrer">AnimateDiff-Lightning</a></li>
+            <li>Efficient model: <a href="https://zephyrzhu1.github.io/FlashGaze/" target="_blank" rel="noreferrer">FlashGaze</a>, <a href="https://github.com/PKU-YuanGroup/Helios" target="_blank" rel="noreferrer">Helios</a>, <a href="https://kingofprank.github.io/fsvideo/" target="_blank" rel="noreferrer">FSVideo</a>, <a href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noreferrer">SDXL-Lightning</a>, <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning" target="_blank" rel="noreferrer">AnimateDiff-Lightning</a></li>
             <li>Foundation models: <a href="https://yuci-gpt.github.io/SplitMoE/" target="_blank" rel="noreferrer">SplitMoE</a>, <a href="https://arxiv.org/abs/2503.07703" target="_blank" rel="noreferrer">Seeddream</a>, <a href="https://arxiv.org/abs/2305.08891" target="_blank" rel="noreferrer">zero-terminal SNR</a>, <a href="https://mv-dream.github.io/" target="_blank" rel="noreferrer">MVDream</a></li>
             <li>Applications: <a href="https://github.com/Boese0601/MagicDance" target="_blank" rel="noreferrer">MagicPose</a>, <a href="https://ip-prompter.github.io/" target="_blank" rel="noreferrer">IP-Prompter</a>, and 20+ high-profile product launches (such as <a href="https://www.theverge.com/2022/8/15/23306101/tiktok-ai-greenscreen-filter-text-to-image-mainstream" target="_blank" rel="noreferrer">this one </a>and <a href="https://www.dexerto.com/entertainment/how-to-use-tiktoks-ai-portrait-filter-2025769/" target="_blank" rel="noreferrer">this one</a>).</li>
           </ul>
         </div>
       </section>
 
-      <section>
+      <section id="news">
         <h2>News</h2>
         <ul class="news-list">
           <li><b style='color:red;'>Hiring!</b> I am hiring people interested in <b>efficient AI</b> (distillation, quantlization, efficient architecture design, training efficiency improvement etc) for image/video/LLM models in China. Please feel free to contact me if you are interested!</li>
-          <li>Introducing <a href="https://www.canva.com/magic-layers/" target="_blank" rel="noreferrer">Canva Magic Layers</a>: transforming flat images into editable, layered designs. My team is responsible for end-to-end acceleration of the underlying models. <a href="https://www.canva.com/newsroom/news/magic-layers-ai-assistants/" target="_blank" rel="noreferrer">[Canva Newsroom]</a></li>
+          <li><span class="meta">[2026/10]</span> Canva launched <a href="https://www.canva.com/newsroom/news/canva-craft/" target="_blank" rel="noreferrer">Craft</a>, a design-focused image generation model that debuted at <b>#4 on DesignArena</b>, behind only OpenAI’s GPT-Image-2.5 Sunburst, GPT-Image-2.5 Flare, and GPT Image 2. Canva also launched <a href="https://www.canva.com/newsroom/news/canva-brush/" target="_blank" rel="noreferrer">Brush</a>, a vision-language design editing model with <b>46% lower cost per edit</b> than Canva’s previous OpenAI-powered design agent. My team accelerated inference for both models.</li>
+          <li><span class="meta">[2026/06]</span> <a href="https://www.canva.com/magic-layers/" target="_blank" rel="noreferrer">Canva Magic Layers</a> expanded to ChatGPT and Gemini, transforming flat images into editable, layered designs. My team is responsible for end-to-end acceleration of the underlying models. <a href="https://www.canva.com/newsroom/news/magic-layers-ai-assistants/" target="_blank" rel="noreferrer">[Canva Newsroom]</a></li>
         </ul>
       </section>
 
-      <section>
+      <section id="publications">
         <h2>Selected Publications</h2>
         <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <!-- Official PhyEvolve example: foam keeps expanding while occluded. -->
+                <video src="./src/phyevolve_demo.mp4" poster="./src/phyevolve_demo.jpg" controls playsinline autoplay muted loop preload="metadata" aria-label="PhyEvolve video example: foam continues expanding while hidden behind a curtain">
+                  <a href="https://phyevolve.github.io/PhyEvolve/">View PhyEvolve demos</a>.
+                </video>
+              </div>
+              <div>
+                <p class="pub-title">PhyEvolve: Multi-Agent State-Evolution Planning for Physics-Aware Video Generation.</p>
+                <p class="pub-venue">arXiv 2026</p>
+                <p class="note">
+                  A multi-agent framework that plans physical state evolution to improve video generation through prompt enhancement, without retraining or modifying the underlying model.
+                </p>
+                <div class="pub-links">
+                  <a href="https://phyevolve.github.io/PhyEvolve/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2610.30717" target="_blank" rel="noreferrer">Paper</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <a href="https://arxiv.org/html/2610.20392v1#S3.F4" target="_blank" rel="noreferrer">
+                  <img src="./src/fold_method.png" alt="FOLD overview: position-free far memory and local order feed separate attention branches before draft verification" loading="lazy" />
+                </a>
+              </div>
+              <div>
+                <p class="pub-title">FOLD: Position-Free Far Memory with Local Order for Long-Context Speculative Decoding.</p>
+                <p class="pub-venue">arXiv 2026</p>
+                <p class="note">
+                  Training-free speculative decoding for long-context LLMs, preserving local positions while retaining distant context as far memory. Evaluated on contexts up to 256K tokens.
+                </p>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2610.20392v1" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://github.com/NuyoahNasuS/FOLD" target="_blank" rel="noreferrer">Code</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-card">
+              <div class="pub-media">
+                <!-- Original video and retained patches from the official FlashGaze project. -->
+                <div class="media-labels"><span>Original</span><span>FlashGaze</span></div>
+                <video src="./src/flashgaze_demo.mp4" poster="./src/flashgaze_demo.jpg" controls playsinline autoplay muted loop preload="metadata" aria-label="Original horse-riding video alongside the patches retained by FlashGaze">
+                  <a href="https://zephyrzhu1.github.io/FlashGaze/">View FlashGaze demos</a>.
+                </video>
+              </div>
+              <div>
+                <p class="pub-title">FlashGaze: Training-Free Multi-Scale Patch Pruning For Efficient Video Understanding.</p>
+                <p class="pub-venue">arXiv 2026</p>
+                <p class="note">
+                  Training-free patch pruning for efficient video understanding. On Qwen3-VL-8B, retains 98% of baseline accuracy on LongVideoBench with up to 5.4× faster vision encoding and 17× faster MLLM prefill.
+                </p>
+                <div class="pub-links">
+                  <a href="https://zephyrzhu1.github.io/FlashGaze/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2610.04225v1" target="_blank" rel="noreferrer">Paper</a>
+                </div>
+              </div>
+            </div>
+          </li>
           <li class="pub-item">
             <div class="pub-card">
               <div class="pub-media">
@@ -305,26 +378,6 @@
                 <div class="pub-links">
                   <a href="https://yuci-gpt.github.io/SplitMoE/" target="_blank" rel="noreferrer">Project</a>
                   <a href="https://arxiv.org/abs/2609.38140" target="_blank" rel="noreferrer">Paper</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="pub-item">
-            <div class="pub-card">
-              <div class="pub-media">
-                <!-- Patch-pruning visualization from Figure 2 of the FlashGaze paper. -->
-                <a href="https://arxiv.org/html/2610.04225v1#S1.F2" target="_blank" rel="noreferrer">
-                  <img src="./src/flashgaze_visualization.jpg" alt="FlashGaze patch pruning: retaining changing regions across video frames and using fine, medium, and coarse patches in a driving scene" loading="lazy" />
-                </a>
-              </div>
-              <div>
-                <p class="pub-title">FlashGaze: Training-Free Multi-Scale Patch Pruning For Efficient Video Understanding.</p>
-                <p class="pub-venue">arXiv 2026</p>
-                <p class="note">
-                  Training-free patch pruning for efficient video understanding. On Qwen3-VL-8B, retains 98% of baseline accuracy on LongVideoBench with up to 5.4× faster vision encoding and 17× faster MLLM prefill.
-                </p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2610.04225v1" target="_blank" rel="noreferrer">Paper</a>
                 </div>
               </div>
             </div>
@@ -602,9 +655,9 @@
                 </div>
               </div>
             </div>
-          </li>          
+          </li>
         </ul>
-        <p class="note">Last update date: 2026/10.</p>
+        <p class="note">Last update date: 2026/11.</p>
       </section>
     </main>
   </body>
